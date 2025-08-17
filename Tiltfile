@@ -18,7 +18,7 @@ local_resource(
 
 local_resource(
     "seed_db",
-    "python main.py",
+    "source .venv/bin/activate && pip3 install -r requirements.txt && python3 main.py",
     trigger_mode=TRIGGER_MODE_MANUAL,
     resource_deps=['init_db']
 )
