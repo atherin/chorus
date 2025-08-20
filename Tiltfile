@@ -22,3 +22,10 @@ local_resource(
     trigger_mode=TRIGGER_MODE_MANUAL,
     resource_deps=['init_db']
 )
+
+local_resource(
+    "init_task_model",
+    "PGPASSWORD=password psql -U user -d postgres -h localhost -p 5432 -f ./prompt/task_model.sql",
+    trigger_mode=TRIGGER_MODE_MANUAL,
+    resource_deps=['db']
+)
